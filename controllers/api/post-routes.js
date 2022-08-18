@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 
-// GET /api/posts
+// get all posts
 router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// GET /api/posts/:id
+// get a post by id
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -68,7 +68,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// POST /api/posts
+// create a new post
 router.post('/', (req, res) => {
     // expects {title: 'Post title', post_text: 'Post text goes here', user_id: 1}
     Post.create({
@@ -83,7 +83,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// PUT /api/posts/:id
+// update a post by id
 router.put('/:id', (req, res) => {
     Post.update({
         title: req.body.title
@@ -106,7 +106,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-// DELETE /api/posts/:id
+// delete a post by id
 router.delete('/:id', (req, res) => {
     Post.destroy({
         where: {
