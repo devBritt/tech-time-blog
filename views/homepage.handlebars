@@ -1,0 +1,17 @@
+<section>
+    {{#each posts as |post|}}
+    <article>
+        <div>
+            <h3>{{post.title}}</h3>
+            <h4>{{post.created_at}}</h4>
+        </div>
+        <div>
+            <p>{{post.post_text}}</p>
+            <a href="/post/{{post.id}}">
+            {{post.comments.length}}
+            comment(s)
+            </a>
+        </div>
+    </article>
+    {{/each}}
+</section>

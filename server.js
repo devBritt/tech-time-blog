@@ -2,16 +2,16 @@ const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const path = require('path');
-
 // handlebars
 const hbs = require('express-handlebars').create({});
 
+
 // create user session
-const expsess = require('express-session');
+const session = require('express-session');
 
 // connect user session to db
-const SequelizeStore = require('connect-session-sequelize')(expsess.Store);
-const session = {
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const userSession = {
     secret: 'Super secret secret',
     cookie: {},
     resave: false,
@@ -29,7 +29,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // create user session
-app.use(expsess(session));
+app.use(session(userSession));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());

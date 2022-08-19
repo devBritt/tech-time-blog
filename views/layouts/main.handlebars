@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Time Blog</title>
+    {{!-- Bulma framework --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {{!-- fonts --}}
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+    {{!-- icons --}}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+    {{!-- header start --}}
+    <header class="navbar">
+        {{!-- title start --}}
+        <div class="navbar-brand">
+            <h1 class="navbar-item">Tech Time</h1>
+            <p class="navbar-item">a blog for tech-lovers</p>
+        </div>
+        {{!-- title end --}}
+        {{!-- nav start --}}
+        <nav class="navbar-menu">
+            <div class="navbar-end">
+                <a href="/" class="navbar-item">home</a>
+                <a href="/" class="navbar-item">dashboard</a>
+                <a href="/" class="navbar-item">logout</p>
+                <a href="/" class="navbar-item">login</a>
+            </div>
+        </nav>
+        {{!-- nav end --}}
+    </header>
+    {{!-- header end --}}
+    {{!-- main start --}}
+    <main class="container is-fluid">
+        {{{ body }}}
+    </main>
+    {{!-- main end --}}
+</body>
+</html>
