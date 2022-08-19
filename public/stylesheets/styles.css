@@ -1,0 +1,27 @@
+:root {
+    --charcoal: #2C3440;
+    --dark-teal: #255B70;
+    --teal: #00878E;
+    --emerald: #33B392;
+    --lime: #8FDA81;
+    --lemon: #F9F871;
+    --white: #FFF;
+    --gray: #767F8D;
+    --light-gray: #CAD3E2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* class styles */
+/* navbar styles */
+.navbar-brand {
+    text-decoration: none;
+}
+.title {
+    font-family: 'Roboto', sans-serif;
+}
+.subtitle {
+    font-size: 1.5rem;
+}
