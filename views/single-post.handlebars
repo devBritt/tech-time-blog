@@ -10,19 +10,19 @@
     </div>
 </section>
 
-<section class="container-fluid">
+<section class="container-fluid mb-3">
     <div class="row">
         <div class="col col-md-6">
             {{#if loggedIn}}
             <form class="comment-form">
                 <div class="mb-3">
-                    <label for="comment-input" class="form-label">Leave a comment</label>
-                    <input type="text" name="comment-input" id="comment-input" class="form-control">
+                    <label for="comment-body" class="form-label">Leave a comment</label>
+                    <textarea name="comment-body" id="comment-body" rows="3" class="form-control"></textarea>
                 </div>
                 <button type="submit" class="btn">Comment</button>
             </form>
             {{/if}}
-            <div class="comments">
+            <div class="comments mt-3">
                 <ul class="list-group">
                     {{#each post.comments as |comment|}}
                     <li class="list-group-item">
