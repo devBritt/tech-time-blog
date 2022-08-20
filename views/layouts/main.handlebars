@@ -12,6 +12,7 @@
     {{!-- icons --}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <link href="/stylesheets/styles.css" rel="stylesheet">
 </head>
 <body>
     {{!-- header start --}}
@@ -23,9 +24,12 @@
             {{!-- nav start --}}
             <nav class="nav justify-content-end align-items-center">
                 <a href="/" class="nav-link">home</a>
-                <a href="/" class="nav-link">dashboard</a>
+                {{#if loggedIn}}
+                <a href="/dashboard" class="nav-link">dashboard</a>
                 <a href="/" class="nav-link">logout</a>
-                <a href="/" class="nav-link">login</a>
+                {{else}}
+                <a href="/login" class="nav-link">login</a>
+                {{/if}}
             </nav>
             {{!-- nav end --}}
         </div>

@@ -4,8 +4,8 @@
         <article class="card">
             <div class="card-body">
                 <h3 class="card-title">{{post.title}}</h3>
-                <p class="card-subtitle created-at">{{post.created_at}}</p>
-                <p>{{post.post_text}}</p>
+                <p class="card-subtitle">{{post.created_at}}</p>
+                <p class="post-text">{{post.post_text}}</p>
                 <a href="/post/{{post.id}}" class="card-link">
                 {{post.comments.length}}
                 comment(s)
