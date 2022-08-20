@@ -76,3 +76,17 @@ main.container-fluid {
 .card-link:hover {
     color: var(--lime);
 }
+
+/* login/signup form styles */
+.login-form button,
+.signup-form button {
+    color: var(--white);
+    background-color: var(--emerald);
+    border: none;
+}
+.login-form button:hover,
+.signup-form button:hover {
+    color: var(--white);
+    background-color: var(--lime);
+    border: none;
+}
