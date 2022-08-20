@@ -1,32 +1,39 @@
-<form class="login-form">
-    <div class="mb-3">
-        <label for="email-input" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+<div class="card-group">
+    <div class="card">
+        <div class="card-body">
+            <form class="login-form">
+                <div class="mb-3">
+                    <label for="email-login" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email-login">
+                </div>
+                <div class="mb-3">
+                    <label for="password-login" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password-login">
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="password-input" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password-input">
+    <div class="card">
+        <div class="card-body">
+            <form class="signup-form">
+            <div class="mb-3">
+                <label for="username-signup" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username-signup">
+            </div>
+            <div class="mb-3">
+                <label for="email-signup" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="password-input" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password-input">
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        </div>
     </div>
-    <button type="submit" class="btn">Submit</button>
-</form>
-
-<form class="signup-form">
-    <div>
-        <label for="username-signup">username:</label>
-        <input type="text" id="username-signup" />
-    </div>
-    <div>
-        <label for="email-signup">email:</label>
-        <input type="tel" id="email-signup" />
-    </div>
-    <div>
-        <label for="password-signup">password:</label>
-        <input type="password" id="password-signup" />
-    </div>
-    <div>
-        <button type="submit">signup</button>
-    </div>
-</form>
+</div>
 {{!-- script for login/signup form logic --}}
 <script src="/javascript/login.js"></script>
