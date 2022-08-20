@@ -7,7 +7,7 @@ async function loginFormHandler(event) {
 
     // verify email, password exist
     if (email && password) {
-        // make POST request at /api/users/ to add users to db
+        // make POST request at /api/users/ to verify user from db
         const response = await fetch('/api/users/login', {
             method: 'POST',
             body: JSON.stringify({
@@ -27,4 +27,35 @@ async function loginFormHandler(event) {
     }
 };
 
+async function signupFormHandler(event) {
+    event.preventDefault();
+
+    // get data from form
+    const username = document.querySelector('.username-signup').value.trim();
+    const email = document.querySelector('.email-signup').value.trim();
+    const password = document.querySelector('.password-signup').value.trim();
+
+    // verify username, email, password exist
+    if (username && email && password) {
+        // make POST request at /api/users/ to add user to db
+        const response = await fetch('/api/users', {
+            method: 'POST',
+            body: JSON.stringify({
+                username,
+                email,
+                password
+            }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        // check response status
+        if (response.ok) {
+            console.log('success');
+        } else {
+            alert(response.statusText);
+        }
+    }
+}
+
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
