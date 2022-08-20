@@ -2,8 +2,8 @@ async function loginFormHandler(event) {
     event.preventDefault();
 
     // get data from form
-    const email = document.querySelector('#email-input').value.trim();
-    const password = document.querySelector('#password-input').value.trim();
+    const email = document.querySelector('#email-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
 
     // verify email, password exist
     if (email && password) {
