@@ -28,6 +28,23 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.btn {
+    color: var(--white);
+    background-color: var(--emerald);
+    border: none;
+}
+
+.btn:hover {
+    color: var(--white);
+    background-color: var(--lime);
+    border: none;
+}
+
+.form-label {
+    font-family: 'Fira Code', monospace;
+    color: var(--gray);
+}
+
 /* class styles */
 /* navbar styles */
 .navbar {
@@ -77,16 +94,14 @@ main.container-fluid {
     color: var(--lime);
 }
 
-/* login/signup form styles */
-.login-form button,
-.signup-form button {
-    color: var(--white);
-    background-color: var(--emerald);
-    border: none;
+/* single post page styles */
+.post-title {
+    color: var(--emerald);
 }
-.login-form button:hover,
-.signup-form button:hover {
-    color: var(--white);
-    background-color: var(--lime);
-    border: none;
+.created-at {
+    color: var(--gray);
+    font-size: large;
+}
+.post-text {
+    font-size: large;
 }

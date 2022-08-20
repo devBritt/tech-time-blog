@@ -1,0 +1,41 @@
+<section class="container-fluid">
+    <div class="post-info">
+        <h2 class="post-title">{{post.title}}</h2>
+        <h3 class="created-at">{{post.created_at}} by {{post.user.username}}</h3>
+        <div class="separator"><hr></div>
+    </div>
+    <div class="post-text">
+        {{post.post_text}}
+        <div class="separator"><hr></div>
+    </div>
+</section>
+
+<section class="container-fluid">
+    <div class="row">
+        <div class="col col-md-6">
+            {{#if loggedIn}}
+            <form class="comment-form">
+                <div class="mb-3">
+                    <label for="comment-input" class="form-label">Leave a comment</label>
+                    <input type="text" name="comment-input" id="comment-input" class="form-control">
+                </div>
+                <button type="submit" class="btn">Comment</button>
+            </form>
+            {{/if}}
+            <div class="comments">
+                <ul class="list-group">
+                    {{#each post.comments as |comment|}}
+                    <li class="list-group-item">
+                        <p class="comment-text">{{comment.comment_text}}</p>
+                        <small>{{comment.created_at}} by {{comment.user.username}}</small>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
