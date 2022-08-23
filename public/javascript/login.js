@@ -31,9 +31,9 @@ async function signupFormHandler(event) {
     event.preventDefault();
 
     // get data from form
-    const username = document.querySelector('.username-signup').value.trim();
-    const email = document.querySelector('.email-signup').value.trim();
-    const password = document.querySelector('.password-signup').value.trim();
+    const username = document.querySelector('#username-signup').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
 
     // verify username, email, password exist
     if (username && email && password) {
