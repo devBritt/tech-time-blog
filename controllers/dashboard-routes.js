@@ -45,10 +45,14 @@ router.get('/', async (req, res) => {
             // if not, make it 0 for handlebars
             posts = 0;
         }
+        const post_link = 'edit';
 
         res.render('dashboard', {
             posts,
+            // for dashboard greeting
             username: req.session.username,
+            // to send user to edit-post page
+            post_link,
             loggedIn: req.session.loggedIn
         });
     }
