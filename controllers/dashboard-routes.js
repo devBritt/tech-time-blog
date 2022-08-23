@@ -2,14 +2,14 @@ const { Post, Comment, User } = require('../models');
 const router = require('express').Router();
 
 // view dashboard
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     // verify user is logged in
     if (!req.session.loggedIn) {
         res.redirect('/login');
         return;
     }
     
-    Post.findAll({
+    const dbPostData = Post.findAll({
         attributes: [
             'id',
             'post_text',
@@ -30,19 +30,25 @@ router.get('/', (req, res) => {
                 attributes: ['username']
             }
         ]
-    })
-    .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
+    });
+
+    // verify db response
+    if (dbPostData) {
+        let posts;
+        // determine if user has created any posts
+        if (dbPostData.length > 0) {
+            posts = dbPostData.map(post => post.get({ plain: true }));
+        } else {
+            // if not, make it 0 for handlebars
+            posts = 0;
+        }
 
         res.render('dashboard', {
             posts,
+            username: req.session.username,
             loggedIn: req.session.loggedIn
         });
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    }
 });
 
 // view new/edit post page
