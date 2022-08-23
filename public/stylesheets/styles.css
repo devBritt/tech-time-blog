@@ -111,3 +111,11 @@ main.container-fluid {
 .post-text {
     font-size: large;
 }
+
+/* dashboard styles */
+.welcome {
+    color: var(--dark-teal);
+}
+.username {
+    color: var(--emerald);
+}

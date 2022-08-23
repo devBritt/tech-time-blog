@@ -54,7 +54,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-// view new/edit post page
-
+// view edit post page
+router.get('/edit/:id', (req, res) => {
+    
+});
 
 module.exports = router;
