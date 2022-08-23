@@ -3,7 +3,7 @@
     <div class="col">
         <article class="card">
             <div class="card-body">
-                <h3 class="card-title">{{post.title}}</h3>
+                <a href="/post/{{post.id}}" class="post-link"><h3 class="card-title">{{post.title}}</h3></a>
                 <p class="card-subtitle">{{post.created_at}}</p>
                 <p class="post-text">{{post.post_text}}</p>
                 <a href="/post/{{post.id}}" class="card-link">

@@ -80,6 +80,9 @@ main.container-fluid {
 .card-title {
     color: var(--dark-teal);
 }
+.card-title:hover {
+    color: var(--emerald);
+}
 .card-subtitle {
     color: var(--gray);
 }
@@ -92,6 +95,9 @@ main.container-fluid {
 }
 .card-link:hover {
     color: var(--lime);
+}
+.post-link {
+    text-decoration: none;
 }
 
 /* single post page styles */
