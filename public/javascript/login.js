@@ -51,6 +51,21 @@ async function signupFormHandler(event) {
         // check response status
         if (response.ok) {
             console.log('success');
+            // automatically log in
+            const loginResponse = await fetch('/api/users/login', {
+                method: 'POST',
+                body: JSON.stringify({
+                    email,
+                    password
+                }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            if (loginResponse.ok) {
+                document.location.replace('/dashboard');
+            } else {
+                alert(response.statusText);
+            }
         } else {
             alert(response.statusText);
         }
