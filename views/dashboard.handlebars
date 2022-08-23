@@ -1,10 +1,16 @@
-<section>
-    <h2 class="welcome">Welcome to your dashboard, <span class="username">{{username}}</span>!</h2>
+<section class="mx-3 my-3">
+    <div class="d-flex align-items-center justify-content-between">
+        <h2 class="welcome">Welcome to your dashboard, <span class="username">{{username}}</span>!</h2>
+        <a class="d-flex align-items-center btn" id="new-post">
+            <span class="material-icons">add</span>
+            <p class="new-post-text mb-0">&nbsp;&nbsp;New Post&nbsp;</p>
+        </a>
+    </div>
 </section>
 
-<section class="user-posts">
+<section class="row-cols-1 row-cols-lg-2 mx-3 mb-3">
     {{#if posts}}
-        {{#each posts}}
+        {{#each posts as |post|}}
         <div class="col">
             <article class="card">
                 <div class="card-body">

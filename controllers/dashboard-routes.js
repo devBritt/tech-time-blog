@@ -9,7 +9,10 @@ router.get('/', async (req, res) => {
         return;
     }
     
-    const dbPostData = Post.findAll({
+    const dbPostData = await Post.findAll({
+        where: {
+            user_id: req.session.user_id
+        },
         attributes: [
             'id',
             'post_text',
