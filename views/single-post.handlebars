@@ -1,7 +1,7 @@
 <section class="container-fluid">
     <div class="post-info">
         <h2 class="post-title">{{post.title}}</h2>
-        <h3 class="created-at">{{post.created_at}} by {{post.user.username}}</h3>
+        <h3 class="created-at">{{format_date post.created_at}} by {{post.user.username}}</h3>
         <div class="separator"><hr></div>
     </div>
     <div class="post-text">
@@ -27,7 +27,7 @@
                     {{#each post.comments as |comment|}}
                     <li class="list-group-item">
                         <p class="comment-text">{{comment.comment_text}}</p>
-                        <small>{{comment.created_at}} by {{comment.user.username}}</small>
+                        <small>{{format_date comment.created_at}} by {{comment.user.username}}</small>
                     </li>
                     {{/each}}
                 </ul>

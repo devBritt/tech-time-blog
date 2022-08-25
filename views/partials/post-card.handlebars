@@ -3,8 +3,8 @@
     <article class="card mb-3">
         <div class="card-body">
             <a href="/{{@root.post_link}}/{{post.id}}" class="post-link"><h3 class="card-title">{{post.title}}</h3></a>
-            <p class="card-subtitle">{{post.created_at}} by {{post.user.username}}</p>
-            <p class="post-text">{{post.post_text}}</p>
+            <p class="card-subtitle">{{format_date post.created_at}} by {{post.user.username}}</p>
+            <p class="post-text">{{shorten_post_text post.post_text}}</p>
             <a href="/{{@root.post_link}}/{{post.id}}" class="card-link">
             {{post.comments.length}}
             comment(s)
