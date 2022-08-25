@@ -9,15 +9,18 @@ User.hasMany(Post, {
 });
 // associate user with post via user_id
 Post.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'cascade'
 });
 // associate user with comment via user_id
 Comment.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'cascade'
 });
 // associate post with comment via post_id
 Comment.belongsTo(Post, {
-    foreignKey: 'post_id'
+    foreignKey: 'post_id',
+    onDelete: 'cascade'
 });
 // associate comment with user via user_id
 User.hasMany(Comment, {
