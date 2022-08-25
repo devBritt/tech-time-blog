@@ -1,0 +1,29 @@
+<section class="container-fluid mb-3">
+    <div class="row">
+        <div class="col col-md-6">
+            {{#if loggedIn}}
+            <form class="comment-form">
+                <div class="mb-3">
+                    <label for="comment-body" class="form-label">Leave a comment</label>
+                    <textarea name="comment-body" id="comment-body" rows="3" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn">Comment</button>
+            </form>
+            {{/if}}
+            <div class="comments mt-3">
+                <ul class="list-group">
+                    {{#each post.comments as |comment|}}
+                    <li class="list-group-item">
+                        <p class="comment-text">{{comment.comment_text}}</p>
+                        <small>{{format_date comment.created_at}} by {{comment.user.username}}</small>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
