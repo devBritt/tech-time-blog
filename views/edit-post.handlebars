@@ -1,0 +1,18 @@
+<section class="container mx-auto">
+    <form id="edit-post-form">
+        <div class="mb-3">
+            <label for="">Title</label>
+            <input type="text" name="post-title" id="post-title" class="form-control" value="{{post.title}}">
+        </div>
+        <div class="mb-3">
+            <label for="post-content">Content</label>
+            <textarea name="post-content" id="post-content" rows="10" class="form-control">{{post.post_text}}</textarea>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <button type="submit" class="btn d-flex" id="edit-post"><span class="material-icons">edit</span>&nbsp;&nbsp;Save Post</button>
+            <button id="delete-post" class="d-flex align-items-center"><span class="material-icons md-36">delete</span></button>
+        </div>
+    </form>
+</section>
+
+<script src="/javascript/edit-post.js"></script>

@@ -8,6 +8,8 @@
     --white: #FFF;
     --gray: #767F8D;
     --light-gray: #CAD3E2;
+    --danger: #dc3545;
+    --danger-light: #e45d6a;
 }
 
 * {
@@ -119,3 +121,14 @@ main.container-fluid {
 .username {
     color: var(--emerald);
 }
+
+/* edit post page styles */
+#delete-post {
+    border: none;
+    background: none;
+    color: var(--danger);
+}
+#delete-post:hover {
+    color: var(--danger-light);
+}
+.material-icons.md-36 { font-size: 36px; }
