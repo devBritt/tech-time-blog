@@ -1,11 +1,11 @@
 <section class="container mx-auto">
     <form id="edit-post-form">
         <div class="mb-3">
-            <label for="">Title</label>
+            <label for="post-title" class="form-label">Title</label>
             <input type="text" name="post-title" id="post-title" class="form-control" value="{{post.title}}">
         </div>
         <div class="mb-3">
-            <label for="post-content">Content</label>
+            <label for="post-content" class="form-label">Content</label>
             <textarea name="post-content" id="post-content" rows="10" class="form-control">{{post.post_text}}</textarea>
         </div>
         <div class="d-flex justify-content-between align-items-center mb-3">
