@@ -1,8 +1,9 @@
 const { Post, Comment, User } = require('../models');
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 
 // view dashboard
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     // verify user is logged in
     if (!req.session.loggedIn) {
         res.redirect('/login');
@@ -59,7 +60,7 @@ router.get('/', async (req, res) => {
 });
 
 // view edit post page
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
