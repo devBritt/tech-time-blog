@@ -45,10 +45,14 @@ router.get('/', async (req, res) => {
             // if not, make it 0 for handlebars
             posts = 0;
         }
+        const post_link = 'dashboard/edit';
 
         res.render('dashboard', {
             posts,
+            // for dashboard greeting
             username: req.session.username,
+            // to send user to edit-post page
+            post_link,
             loggedIn: req.session.loggedIn
         });
     }
@@ -56,7 +60,36 @@ router.get('/', async (req, res) => {
 
 // view edit post page
 router.get('/edit/:id', (req, res) => {
-    
-});
+    Post.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'post_text',
+            'title',
+            'created_at'
+        ]
+    })
+    .then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+        
+        // serialize the data
+        const post = dbPostData.get({ plain: true });
+
+        // pass data to template
+        res.render('edit-post', {
+            post,
+            loggedIn: req.session.loggedIn
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+})
 
 module.exports = router;
